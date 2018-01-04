@@ -1,0 +1,53 @@
+@import (reference) '../../variables';
+
+.collectable-container {
+  background: #f4f7f7;
+  height: ~'calc(100vh - 60px)';
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+
+  &::after {
+    content: '';
+    clear: both;
+    display: table;
+  }
+
+  .collectable-wrapper {
+    float: left;
+    padding: 25px;
+    width: 50%;
+
+    .collectable {
+      border-radius: 25px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 26px;
+      line-height: 200px;
+      text-align: center;
+      transition: background 0.2s ease-out;
+    }
+
+    .collectable-color(~'8n+1', #ff7473);
+    .collectable-color(~'8n+2', #ffc952);
+    .collectable-color(~'8n+3', #60c5ba);
+    .collectable-color(~'8n+4', #8283a7);
+    .collectable-color(~'8n+5', #f9a11b);
+    .collectable-color(~'8n+6', #79bd9a);
+    .collectable-color(~'8n+7', #ff5f2e);
+    .collectable-color(~'8n', #47b8e0);
+  }
+}
+
+.collectable-color(@nth, @color) {
+  &:nth-child(@{nth}) {
+    .collectable {
+      background: @color;
+
+      &:hover {
+        background: darken(@color, 10%);
+        font-weight: bold;
+      }
+    }
+  }
+}

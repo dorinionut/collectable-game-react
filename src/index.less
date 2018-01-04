@@ -1,0 +1,58 @@
+@import (reference) 'variables';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: @color-text;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+
+  main {
+    border-right: 1px solid #fff;
+    height: 100vh;
+    float: left;
+    width: 70%;
+
+    header {
+      background: @background-header;
+      color: #FFF;
+      font-size: 18px;
+      line-height: 60px;
+      height: 60px;
+      padding-left: 25px;
+
+      .button-primary {
+        float: right;
+        margin:10px 25px 0px 0px;
+      }
+    }
+  }
+
+  aside {
+    height: 100vh;
+    float: left;
+    width: 30%;
+  }
+
+  .button-primary {
+    background: @background-button-primary;
+    border: 1px solid lighten(@background-button-primary, 15%);
+    border-radius: 15px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: normal;
+    line-height: 40px;
+    padding: 0px 20px;
+    text-align: center;
+    transition: background 0.2s ease-out;
+
+    &:hover {
+      background: darken(@background-button-primary, 5%);
+    }
+  }
+}

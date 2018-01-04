@@ -1,0 +1,104 @@
+@import (reference) '../../variables';
+
+h1 {
+  background: @background-header-darker;
+  color: #fff;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0;
+  padding-left: 15px;
+  line-height: 60px;
+}
+
+.scoreboard {
+  background: #eee;
+  height: ~'calc(100vh - 60px)';
+
+  .scoreboard-row {
+    display: -ms-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    padding-left: 15px;
+  }
+
+  .scoreboard-column {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 33.333333%;
+    flex: 1 1 33.333333%;
+
+    &:nth-child(3n+2) {
+      text-align: center;
+    }
+
+    &:nth-child(3n) {
+      text-align: right;
+      padding-right: 15px;
+    }
+  }
+
+  .header {
+    .scoreboard-row;
+
+    border-bottom: 1px solid @color-border;
+
+    .column {
+      .scoreboard-column;
+
+      line-height: 40px;
+      font-weight: bold;
+    }
+  }
+
+  .item-container {
+    height: ~'calc(100vh - 243px)';
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .item {
+      .scoreboard-row;
+
+      background: #f1f5f5;
+      border-bottom: 1px solid #f4f7f7;
+
+      .column {
+        .scoreboard-column;
+
+        font-size: 16px;
+        line-height: 40px;
+      }
+    }
+
+    .no-items {
+      flex: 1 1 auto;
+      line-height: 40px;
+      padding-left: 15px;
+    }
+  }
+
+  .bonus {
+    background: @background-header;
+    border-bottom: 1px solid @color-border;
+    border-top: 1px solid @color-border;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 60px;
+    padding-left: 15px;
+    text-transform: uppercase;
+  }
+
+  .total {
+    background: @background-header-darker;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 80px;
+    padding-left: 15px;
+    text-transform: uppercase;
+  }
+}
